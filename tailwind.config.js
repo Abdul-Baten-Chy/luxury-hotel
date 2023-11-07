@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {},
     fontFamily: {
-      'script': ['Pinyon Script', 'system-ui'],
+      'script': ['Rouge Script', 'system-ui'],
       'sans': ['Poppins', 'system-ui']
     }
   },
