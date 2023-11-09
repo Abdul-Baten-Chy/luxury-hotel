@@ -7,29 +7,33 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const Rooms = ({ room }) => {
-  const { _id, price, size, maxGuests, roomTitle, image } = room;
+  
  
   const { user } = useContext(MyContextProvider);
   const [checkInDate, setCheckInDate] = useState("");
   const [checkOutDate, setCheckOutDate] = useState("");
-  const [product, setProduct] = useState('');
+  // const [product, setProduct] = useState({});
   const navigate =useNavigate()
-  
-  const handleProductSelection = (_id) => {
+  const { _id, price, size, maxGuests, roomTitle, image } = room;
 
+
+  const handleProductSelection = (_id) => {
+    
     if(!user){
       return navigate('/')
     }
-   
-    if(room._id==_id){
-      setProduct(room)
-    }
-    console.log(product); 
+   const userInfo={
+    _id, price, roomTitle
+   }
+    
+      
+    
+    console.log(userInfo); 
   
     axios
     .post("http://localhost:5000/bookings", {
       user:user?.email,
-      product,
+      userInfo,
       checkInDate,
       checkOutDate,
     })
