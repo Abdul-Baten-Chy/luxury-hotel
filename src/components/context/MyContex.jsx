@@ -9,6 +9,7 @@ const MyContext = ({children}) => {
     const provider = new GoogleAuthProvider();
     const [user, setUser]=useState(null);
     const [loading, setLoading]=useState(true);
+   
     const auth = getAuth(app);
     const handleRegister=(email, password)=>{
         setLoading(true);
@@ -34,6 +35,7 @@ const MyContext = ({children}) => {
         return ()=>{
             unSubscribe();}
     },[])
+
     
     const objOfInfo={handleRegister, handleSignIn, handleSignOut, user, loading,loginWithGoogle }
     return (

@@ -8,12 +8,14 @@ import SignIn from "../components/sign-in/SignIn";
 import Register from "../components/register/Register";
 import RoomsContainer from "../components/Rooms/RoomsContainer";
 import Details from "../components/details/Details";
+import Error from "../components/error/Error";
 
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <App></App>,
+      errorElement:<Error></Error>,
       children:[
         {
             path:"/",

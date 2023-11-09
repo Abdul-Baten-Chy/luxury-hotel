@@ -1,13 +1,19 @@
 import { useLoaderData } from "react-router-dom";
 import Header from "../Home/Header";
 
+
 const Details = () => {
   const room = useLoaderData();
+ 
+  
+
   const { _id, price, size, maxGuests, description, roomTitle, image } = room;
+  
 
-  const handleBookNow=(_id)=>{
+  
+  // const handleBookingSubmit=()=>{
 
-  }
+  // }
   return (
     <div className="w-full">
       <Header></Header>
@@ -20,8 +26,13 @@ const Details = () => {
           <p className="max-w-[500px] mt-16 pt-8 border-t-2 text-justify">
             {description}
           </p>
+         
+
           <div className="card-actions justify-center">
-            <button className="w-[112px] h-[40px] text-center bg-green-500 text-white mb-10 " onClick={()=>handleBookNow(_id)}>
+            <button
+              className="w-[112px] h-[40px] text-center bg-green-500 text-white mb-10 "
+              
+            >
               Book Now
             </button>
           </div>
@@ -45,7 +56,7 @@ const Details = () => {
               </span>
             </p>
             <p className="font-script text-3xl border-r-2 border-yellow-500 leading-[50px] pr-10 text-center">
-            Rack Rate <br />
+              Rack Rate <br />
               <span className="text-2xl text-center font-sans text-zinc-950 ">
                 BDT {price}
               </span>
@@ -59,7 +70,6 @@ const Details = () => {
           </div>
         </div>
       </div>
-
     </div>
   );
 };
